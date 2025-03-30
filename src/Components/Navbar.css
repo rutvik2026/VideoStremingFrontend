@@ -1,0 +1,23 @@
+
+
+.sidebar {
+  width: 15vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  
+}
+
+
+@media (max-width: 768px) {
+  .fixed-bottom {
+    height: 60px;
+  }
+
+  .fixed-bottom .nav-link {
+    flex: 1;
+    text-align: center;
+  }
+}
