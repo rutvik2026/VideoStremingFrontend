@@ -24,6 +24,7 @@ export const Login = () => {
      e.preventDefault();
      try {
          const base_url=import.meta.env.base_url;
+         console.log("base url",base_url);
      const res =await axios.post(`${base_url}/api/user/v1/login`,formData);
       if(res.data.success){
         const {token,cust}=res.data;
