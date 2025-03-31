@@ -30,7 +30,7 @@ export const Subscription = () => {
   const toGetVideo = async (channelId) => {
     setSelectedChannel(channelId);
     try {
-      const res = await axios.get(${base_url}/api/user/v1/yourvidios`, {
+      const res = await axios.get(`${base_url}/api/user/v1/yourvidios`, {
         params: { q: channelId },
       });
       setVideos(res.data);
