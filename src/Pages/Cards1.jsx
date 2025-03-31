@@ -8,13 +8,13 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
   const [isDiscription, setIsDiscription] = useState(false);
   const cust=sessionStorage.getItem("cust");
   const {id}=cust? JSON.parse(cust) : {};
-
+ const base_url=import.meta.env.base_url;
   const handleDiscription = () => {
     setIsDiscription(!isDiscription);
   };
   const handleLike=async()=>{
     try {
-      const res = await axios.post("/api/user/v1/like", {userId:id,videoId:Id});
+      const res = await axios.post(`${base_url}/api/user/v1/like`, {userId:id,videoId:Id});
       console.log(res.data);
        if (!res.data.sucess) {
          alert("You are already Liked to this channel");
