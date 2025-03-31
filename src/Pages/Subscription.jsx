@@ -8,14 +8,14 @@ export const Subscription = () => {
   const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
   const [selectedChannel,setSelectedChannel]=useState();
-  const base_url=import.meta.env.VITE_BASE_URL;
+  
   useEffect(() => {
     const cust = sessionStorage.getItem("cust");
     const { id } = cust ? JSON.parse(cust) : {};
 
     const fetchChannel = async () => {
       try {
-        
+         const base_url=import.meta.env.VITE_BASE_URL;
         const res = await axios.get(`${base_url}/api/user/v1/subscription`, {
           params: { userId: id },
         });
@@ -30,6 +30,7 @@ export const Subscription = () => {
   const toGetVideo = async (channelId) => {
     setSelectedChannel(channelId);
     try {
+      const base_url=import.meta.env.VITE_BASE_URL;
       const res = await axios.get(`${base_url}/api/user/v1/yourvidios`, {
         params: { q: channelId },
       });
