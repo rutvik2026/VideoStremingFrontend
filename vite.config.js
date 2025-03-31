@@ -3,7 +3,13 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+  },
   server: {
-    historyApiFallback: true,  // This ensures proper routing in local development
+    historyApiFallback: true,
+  },
+  preview: {
+    historyApiFallback: true,
   }
 });
