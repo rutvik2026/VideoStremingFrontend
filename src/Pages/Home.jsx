@@ -9,10 +9,11 @@ export const Home = () => {
     const [search,setSearch]=useState();
     const [videos,setVideos]=useState([]);
     const navigate=useNavigate();
+    const base_url=import.meta.env.VITE_BASE_URL;
    useEffect(()=>{
      const fetchVideo=async()=>{
       try {
-      const res = await axios.get("/api/user/v1/getvideo",{
+      const res = await axios.get(`${base_url}/api/user/v1/getvideo`,{
         params:{q:search}
       });
       setVideos(res.data);
