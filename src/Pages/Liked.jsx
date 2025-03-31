@@ -16,7 +16,8 @@ export const Liked = () => {
     console.log("id", id);
     const fetchLikedVideos = async () => {
       try {
-        const res = await axios.get("/api/user/v1/likedvidios", {
+        const base_url=import.meta.env.VITE_BASE_URL;
+        const res = await axios.get(`${base_url}/api/user/v1/likedvidios`, {
           params: { q: id },
         });
         console.log(res.data);
