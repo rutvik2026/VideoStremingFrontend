@@ -16,7 +16,8 @@ export const YourVideo = () => {
     console.log("id", id);
     const fetchYourVideos = async () => {
       try {
-        const res = await axios.get("/api/user/v1/yourvidios", {
+        const base_url=import.meta.env.VITE_BASE_URL;
+        const res = await axios.get(`${base_url}/api/user/v1/yourvidios`, {
           params: { q: id },
         });
         console.log(res.data);
