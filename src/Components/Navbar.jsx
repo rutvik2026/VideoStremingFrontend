@@ -21,10 +21,10 @@ const Navigation = () => {
             <Navbar.Brand className="text-primary mt-2 fs-2">
               RBTube
             </Navbar.Brand>
-            <Nav.Link href="/home" className="text-primary mt-5 fs-3">
+            <Nav.Link to="/home" className="text-primary mt-5 fs-3">
               Home
             </Nav.Link>
-            <Nav.Link href="/upload" className="text-primary mt-3 fs-3">
+            <Nav.Link to="/upload" className="text-primary mt-3 fs-3">
               Upload
             </Nav.Link>
             <Nav.Link href="/subscription" className="text-primary mt-3 fs-3">
