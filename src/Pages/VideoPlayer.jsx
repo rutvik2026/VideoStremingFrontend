@@ -16,7 +16,7 @@ const VideoPlayer = () => {
   const [id, setId] = useState(null);
   const [qualityLevels, setQualityLevels] = useState([]);
   const [selectedQuality, setSelectedQuality] = useState(null);
-
+ const base_url=import.meta.env.VITE_BASE_URL;
   const video = location.state?.video || {};
 
   useEffect(() => {
@@ -64,7 +64,8 @@ const VideoPlayer = () => {
       try {
         const cust = sessionStorage.getItem("cust");
         const { id } = cust ? JSON.parse(cust) : {};
-        const res = await axios.post("/api/user/v1/history", {
+        
+        const res = await axios.post(`${base_url}/api/user/v1/history`, {
           userId: id,
           videoId: video._id,
         });
@@ -79,7 +80,7 @@ const VideoPlayer = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get("/api/user/v1/getvideo", {
+        const res = await axios.get(`${base_url}/api/user/v1/getvideo`, {
           params: { q: search },
         });
         console.log("retraive data sujested video data", res.data);
