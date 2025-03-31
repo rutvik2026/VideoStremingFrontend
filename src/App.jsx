@@ -1,6 +1,6 @@
 import Navigation from "./Components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {HashRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 import Register2 from "./Pages/Register2";
 import { Login } from "./Pages/Login";
 import "./App.css";
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Protected>
           <Navigation onLogout={handleLogout} classname="sidebar" />
         </Protected>
@@ -113,7 +113,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register2 />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }
