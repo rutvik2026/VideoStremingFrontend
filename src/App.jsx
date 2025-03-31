@@ -10,7 +10,7 @@ import { Upload } from "./Pages/Upload.jsx";
 import VideoPlayer from "./Pages/VideoPlayer";
 import { Liked } from "./Pages/Liked";
 import { WatchLater } from "./Pages/WatchLater";
-import { History } from "./Pages/History";
+import History  from "./Pages/History";
 import { YourVideo } from "./Pages/YourVideos";
 import { Subscription } from "./Pages/Subscription";
 
