@@ -1,19 +1,9 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    outDir: "dist",
-  },
   server: {
-    port: 3000,
-  },
-  // Add this for correct routing in production
-  resolve: {
-    alias: {
-      "@": "/src",
-    },
-  },
-  base: "/",
+    historyApiFallback: true,  // This ensures proper routing in local development
+  }
 });
