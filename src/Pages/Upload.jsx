@@ -44,8 +44,7 @@ export const Upload = () => {
      console.log("frontend data",data);
     try {
    
-      const res = await axios.post(`${base_url}/api/user/v1/uploadvideo`, // Ensure correct API URL
-        data,
+      const res = await axios.post(`${base_url}/api/user/v1/uploadvideo`,data,
         {
           headers: { "Content-Type": "multipart/form-data" },
         }
