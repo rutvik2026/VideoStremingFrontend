@@ -23,7 +23,7 @@ export const Login = () => {
     const handleSubmit=async(e)=>{
      e.preventDefault();
      try {
-         const base_url=import.env.base_url;
+         const base_url=import.meta.env.base_url;
          console.log("base url",base_url);
      const res =await axios.post(`${base_url}/api/user/v1/login`,formData);
       if(res.data.success){
