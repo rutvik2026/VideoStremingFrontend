@@ -6,7 +6,7 @@ import "./Register.css";
 import { useNavigate } from "react-router-dom";
 import Cards from "./Cards";
 
-export const History = () => {
+const History = () => {
   const navigate = useNavigate();
   const [videos, setVideos] = useState([]);
 
@@ -61,3 +61,4 @@ export const History = () => {
     </div>
   );
 };
+export default History;
