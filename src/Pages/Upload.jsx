@@ -14,7 +14,7 @@ export const Upload = () => {
   const [thumbnail,setThumbnail]=useState(null);
   const cust = sessionStorage.getItem("cust");
   const { id,name } = cust ? JSON.parse(cust) : {}; // Handle null case
- const base_url=import.meta.env.VITE_BASE_URL;
+
   console.log("User ID:", id);
 
   const handleUpload = async (e) => {
@@ -43,7 +43,7 @@ export const Upload = () => {
     }
      console.log("frontend data",data);
     try {
-   
+        const base_url=import.meta.env.VITE_BASE_URL;
       const res = await axios.post(`${base_url}/api/user/v1/uploadvideo`,data,
         {
           headers: { "Content-Type": "multipart/form-data" },
