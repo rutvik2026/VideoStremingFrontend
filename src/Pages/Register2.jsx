@@ -34,8 +34,9 @@ const Register2 = () => {
         data.append("avtar",formData.avtar);
     }
      try {
+       const base_url=import.meta.env.VITE_BASE_URL;
         const res = await axios.post(
-          "/api/user/v1/register",
+          `${base_url}/api/user/v1/register`,
           data,
           {
             headers: {
