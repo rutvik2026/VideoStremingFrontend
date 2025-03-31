@@ -45,8 +45,7 @@ export const Upload = () => {
     try {
       const base_url=import.meta.env.VITE_BASE_URL;
       const res = await axios.post(
-        
-        `${base_url}/api/user/v1/uploadvideo`, // Ensure correct API URL
+         `${base_url}/api/user/v1/uploadvideo`, // Ensure correct API URL
         data,
         {
           headers: { "Content-Type": "multipart/form-data" },
