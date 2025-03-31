@@ -6,7 +6,7 @@ import { Login } from "./Pages/Login";
 import "./App.css";
 import Protected from "./Components/Protected";
 import { Home } from "./Pages/Home";
-import { Upload } from "./Pages/Upload";
+import { Upload } from "./Pages/Upload.jsx";
 import VideoPlayer from "./Pages/VideoPlayer";
 import { Liked } from "./Pages/Liked";
 import { WatchLater } from "./Pages/WatchLater";
