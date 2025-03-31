@@ -21,25 +21,25 @@ const Navigation = () => {
             <Navbar.Brand className="text-primary mt-2 fs-2">
               RBTube
             </Navbar.Brand>
-            <Nav.Link to="/home" className="text-primary mt-5 fs-3">
+            <Nav.Link href="/#/home" className="text-primary mt-5 fs-3">
               Home
             </Nav.Link>
-            <Nav.Link to="/upload" className="text-primary mt-3 fs-3">
+            <Nav.Link href="/#/upload" className="text-primary mt-3 fs-3">
               Upload
             </Nav.Link>
-            <Nav.Link href="/subscription" className="text-primary mt-3 fs-3">
+            <Nav.Link href="/#/subscription" className="text-primary mt-3 fs-3">
               Subscriptions
             </Nav.Link>
-            <Nav.Link href="/history" className="text-primary mt-3 fs-3">
+            <Nav.Link href="/#/history" className="text-primary mt-3 fs-3">
               History
             </Nav.Link>
-            <Nav.Link href="/watchlater" className="text-primary mt-3 fs-3">
+            <Nav.Link href="/#/watchlater" className="text-primary mt-3 fs-3">
               Watch Later
             </Nav.Link>
-            <Nav.Link href="/yourvideos" className="text-primary mt-3 fs-3">
+            <Nav.Link href="/#/yourvideos" className="text-primary mt-3 fs-3">
               Your Videos
             </Nav.Link>
-            <Nav.Link href="/likedvideos" className="text-primary mt-3 fs-3">
+            <Nav.Link href="/#/likedvideos" className="text-primary mt-3 fs-3">
               Liked Videos
             </Nav.Link>
           </Nav>
@@ -49,22 +49,22 @@ const Navigation = () => {
       {/* Bottom Navbar for Mobile */}
       <Navbar className="bg-black text-white d-flex d-md-none fixed-bottom">
         <Container className="d-flex justify-content-around">
-          <Nav.Link href="/home" className="text-white fs-4">
+          <Nav.Link href="/#/home" className="text-white fs-4">
             <FaHome />
           </Nav.Link>
-          <Nav.Link href="/upload" className="text-white fs-4">
+          <Nav.Link href="/#/upload" className="text-white fs-4">
             <FaUpload />
           </Nav.Link>
-          <Nav.Link href="/history" className="text-white fs-4">
+          <Nav.Link href="/#/history" className="text-white fs-4">
             <FaHistory />
           </Nav.Link>
-          <Nav.Link href="/watchlater" className="text-white fs-4">
+          <Nav.Link href="/#/watchlater" className="text-white fs-4">
             <FaRegClock />
           </Nav.Link>
-          <Nav.Link href="/yourvideos" className="text-white fs-4">
+          <Nav.Link href="/#/yourvideos" className="text-white fs-4">
             <FaPlay />
           </Nav.Link>
-          <Nav.Link href="/likedvideos" className="text-white fs-4">
+          <Nav.Link href="/#/likedvideos" className="text-white fs-4">
             <FaThumbsUp />
           </Nav.Link>
         </Container>
