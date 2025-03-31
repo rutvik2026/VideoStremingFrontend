@@ -8,7 +8,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
   const [isDiscription, setIsDiscription] = useState(false);
   const cust=sessionStorage.getItem("cust");
   const {id}=cust? JSON.parse(cust) : {};
- const base_url=import.meta.env.base_url;
+ const base_url=import.meta.env.VITE_BASE_URL;
   const handleDiscription = () => {
     setIsDiscription(!isDiscription);
   };
