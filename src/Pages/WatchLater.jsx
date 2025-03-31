@@ -18,7 +18,8 @@ export const WatchLater = () => {
     console.log("id", id);
     const fetchWatchLaterVideos = async () => {
       try {
-        const res = await axios.get("/api/user/v1/watchlatervidios", {
+        const base_url=import.meta.env.VITE_BASE_URL;
+        const res = await axios.get(`${base_url}/api/user/v1/watchlatervidios`, {
           params: { q: id },
         });
         console.log(res.data);
