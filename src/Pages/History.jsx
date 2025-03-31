@@ -16,7 +16,8 @@ export const History = () => {
     console.log("id", id);
     const fetchHistoryVideos = async () => {
       try {
-        const res = await axios.get("/api/user/v1/historyvidios", {
+        const base_url=import.meta.env.VITE_BASE_URL;
+        const res = await axios.get(`${base_url}/api/user/v1/historyvidios`, {
           params: { q: id },
         });
         console.log(res.data);
