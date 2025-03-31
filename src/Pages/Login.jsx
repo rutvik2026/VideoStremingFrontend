@@ -23,7 +23,8 @@ export const Login = () => {
     const handleSubmit=async(e)=>{
      e.preventDefault();
      try {
-     const res =await axios.post("/api/user/v1/login",formData);
+         const base_url=import.meta.env.base_url;
+     const res =await axios.post(`${base_url}/api/user/v1/login`,formData);
       if(res.data.success){
         const {token,cust}=res.data;
        sessionStorage.setItem("cust", JSON.stringify(cust));
