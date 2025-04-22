@@ -35,8 +35,8 @@ const Register2 = () => {
     }
      try {
        const base_url=import.meta.env.VITE_BASE_URL;
-        const res = await axios.post(
-          `${base_url}/api/user/v1/register`,
+       console.log("base urk 23",base_url);
+        const res = await axios.post(`${base_url}/api/user/v1/register`,
           data,
           {
             headers: {
