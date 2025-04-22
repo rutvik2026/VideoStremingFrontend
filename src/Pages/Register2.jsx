@@ -52,7 +52,7 @@ const Register2 = () => {
           navigate("/login");
         }
      } catch (error) {
-        console.log("error during Registration",error);
+        console.log("error during Registration1",error);
      }
     
   };
