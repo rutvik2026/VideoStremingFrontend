@@ -13,7 +13,7 @@ import { WatchLater } from "./Pages/WatchLater";
 import History  from "./Pages/History";
 import { YourVideo } from "./Pages/YourVideos";
 import { Subscription } from "./Pages/Subscription";
-
+import NavigationProtected from "./Components/NavigationProtected";
 function App() {
   
 
@@ -25,9 +25,9 @@ function App() {
   return (
     <>
       <Router>
-        <Protected>
+        <NavigationProtected>
           <Navigation onLogout={handleLogout} classname="sidebar" />
-        </Protected>
+        </NavigationProtected>
         <Routes>
           <Route
             path="/home"
