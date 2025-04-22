@@ -47,7 +47,7 @@
 
   .video-container {
     width: 100%;
-    display: block;
+    display: flex;
     justify-content: center;
   }
 }
