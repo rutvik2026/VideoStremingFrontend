@@ -3,12 +3,13 @@ import Card from "react-bootstrap/Card";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 function Cards({ Id,title, channelName, description, videoRef,likedCount ,channelId}) {
   const [isDiscription, setIsDiscription] = useState(false);
   const cust=sessionStorage.getItem("cust");
   const {id}=cust? JSON.parse(cust) : {};
  const base_url=import.meta.env.VITE_BASE_URL;
+  const navigate=useNavigate();
   const handleDiscription = () => {
     setIsDiscription(!isDiscription);
   };
@@ -24,7 +25,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
        }
       }else{
         alert("please log in to like this ");
-        navigate("/login");
+        navigate("/#/login");
       }
     } catch (error) {
       console.log("error in handleLike",error);
@@ -45,7 +46,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
          }
         }else{
           alert("please log in to add watchlater this ");
-          navigate("/login");
+          navigate("/#/login");
         }
       } catch (error) {
         console.log("Error in handleWatchLeter",error);
@@ -64,7 +65,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
       }
      }else{
        alert("please log in to subscribe this ");
-        navigate("/login");
+        navigate("/#/login");
      }
     } catch (error) {
       console.log("Error in handleSubscribe",error);
