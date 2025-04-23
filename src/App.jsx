@@ -13,7 +13,7 @@ import { WatchLater } from "./Pages/WatchLater";
 import History  from "./Pages/History";
 import { YourVideo } from "./Pages/YourVideos";
 import { Subscription } from "./Pages/Subscription";
-
+import { AuthProvider } from "./Components/AuthController";
 function App() {
   
 
@@ -24,6 +24,7 @@ function App() {
 
   return (
     <>
+      <AuthProvider>
       <Router>
         
           <Navigation onLogout={handleLogout} classname="sidebar" />
@@ -114,6 +115,7 @@ function App() {
           <Route path="/register" element={<Register2 />} />
         </Routes>
       </Router>
+      </AuthProvider>
     </>
   );
 }
