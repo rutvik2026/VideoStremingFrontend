@@ -25,7 +25,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
        }
       }else{
         alert("please log in to like this ");
-        navigate("/#/login");
+        navigate("/login");
       }
     } catch (error) {
       console.log("error in handleLike",error);
