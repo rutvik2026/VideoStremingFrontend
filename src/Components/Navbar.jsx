@@ -13,7 +13,9 @@ import {
 import { AiOutlineLogin } from "react-icons/ai";
 import { useAuth } from "./AuthController"; 
 const Navigation = () => {
-  const {id}=useAuth();
+  const auth = useAuth();
+const id = auth?.id;
+
   
   return (
     <>
