@@ -5,12 +5,13 @@ import "./Register.css";
 import { Form } from "react-bootstrap";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { useAuth } from '../Components/AuthController';
 export const Login = () => {
     const [formData,setFormData]=useState({
         email:"",
         password:"",
     });
+     const {login}=useAuth();
     const navigate=useNavigate();
     const handleChange=(e)=>{
         const {name,value}=e.target;
@@ -30,6 +31,7 @@ export const Login = () => {
         const {token,cust}=res.data;
        sessionStorage.setItem("cust", JSON.stringify(cust));
        sessionStorage.setItem("token",token);
+           login(cust);
         navigate("/home");
       }else{
         alert("Login failed, Please try again!");
