@@ -22,9 +22,9 @@ const Protected = ({ children }) => {
 
   if (
     !token &&
-    location.pathname !== "/register" &&
-    location.pathname !== "/home" &&
-    location.pathname !== "/login"
+    location.pathname !== "/#/register" &&
+    location.pathname !== "/#/home" &&
+    location.pathname !== "/#/login"
   ) {
     return null; // ✅ Prevents unauthorized page rendering
   }
