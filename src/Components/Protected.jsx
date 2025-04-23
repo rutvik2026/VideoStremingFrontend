@@ -10,13 +10,22 @@ const Protected = ({ children }) => {
   useEffect(() => {
     if (!token) {
       // Allow access to "/register" without authentication
-      if (location.pathname !== "/register") {
-        navigate("/login", { replace: true });
+      if (
+        location.pathname !== "/register" &&
+        location.pathname !== "/login" &&
+        location.pathname !== "/video"
+      ) {
+        navigate("/", { replace: true });
       }
     }
   }, [navigate, token, location.pathname]); // ✅ Added `location.pathname` as a dependency
 
-  if (!token && location.pathname !== "/register") {
+  if (
+    !token &&
+    location.pathname !== "/register" &&
+    location.pathname !== "/home" &&
+    location.pathname !== "/login"
+  ) {
     return null; // ✅ Prevents unauthorized page rendering
   }
 
