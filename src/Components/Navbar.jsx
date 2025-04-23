@@ -10,8 +10,10 @@ import {
   FaPlay,
   FaThumbsUp,
 } from "react-icons/fa"; // Icons for mobile navbar
-
+import { AiOutlineLogin } from "react-icons/ai";
 const Navigation = () => {
+  const token=sessionStorage.getItem("cust");
+  const {id}=token? JSON.parse(token):{};
   return (
     <>
       {/* Sidebar for Desktop */}
@@ -21,27 +23,41 @@ const Navigation = () => {
             <Navbar.Brand className="text-primary mt-2 fs-2">
               RBTube
             </Navbar.Brand>
-            <Nav.Link href="/#/home" className="text-primary mt-5 fs-3">
-              Home
-            </Nav.Link>
-            <Nav.Link href="/#/upload" className="text-primary mt-3 fs-3">
-              Upload
-            </Nav.Link>
-            <Nav.Link href="/#/subscription" className="text-primary mt-3 fs-3">
-              Subscriptions
-            </Nav.Link>
-            <Nav.Link href="/#/history" className="text-primary mt-3 fs-3">
-              History
-            </Nav.Link>
-            <Nav.Link href="/#/watchlater" className="text-primary mt-3 fs-3">
-              Watch Later
-            </Nav.Link>
-            <Nav.Link href="/#/yourvideos" className="text-primary mt-3 fs-3">
-              Your Videos
-            </Nav.Link>
-            <Nav.Link href="/#/likedvideos" className="text-primary mt-3 fs-3">
-              Liked Videos
-            </Nav.Link>
+            {id ? (
+              <>
+                <Nav.Link href="/home" className="text-primary mt-5 fs-3">
+                  Home
+                </Nav.Link>
+                <Nav.Link href="/upload" className="text-primary mt-3 fs-3">
+                  Upload
+                </Nav.Link>
+                <Nav.Link
+                  href="/subscription"
+                  className="text-primary mt-3 fs-3"
+                >
+                  Subscriptions
+                </Nav.Link>
+                <Nav.Link href="/history" className="text-primary mt-3 fs-3">
+                  History
+                </Nav.Link>
+                <Nav.Link href="/watchlater" className="text-primary mt-3 fs-3">
+                  Watch Later
+                </Nav.Link>
+                <Nav.Link href="/yourvideos" className="text-primary mt-3 fs-3">
+                  Your Videos
+                </Nav.Link>
+                <Nav.Link
+                  href="/likedvideos"
+                  className="text-primary mt-3 fs-3"
+                >
+                  Liked Videos
+                </Nav.Link>
+              </>
+            ) : (
+              <Nav.Link href="/login" className="text-primary mt-3 fs-3">
+                Login
+              </Nav.Link>
+            )}
           </Nav>
         </Container>
       </Navbar>
@@ -49,24 +65,32 @@ const Navigation = () => {
       {/* Bottom Navbar for Mobile */}
       <Navbar className="bg-black text-white d-flex d-md-none fixed-bottom">
         <Container className="d-flex justify-content-around">
-          <Nav.Link href="/#/home" className="text-white fs-4">
-            <FaHome />
-          </Nav.Link>
-          <Nav.Link href="/#/upload" className="text-white fs-4">
-            <FaUpload />
-          </Nav.Link>
-          <Nav.Link href="/#/history" className="text-white fs-4">
-            <FaHistory />
-          </Nav.Link>
-          <Nav.Link href="/#/watchlater" className="text-white fs-4">
-            <FaRegClock />
-          </Nav.Link>
-          <Nav.Link href="/#/yourvideos" className="text-white fs-4">
-            <FaPlay />
-          </Nav.Link>
-          <Nav.Link href="/#/likedvideos" className="text-white fs-4">
-            <FaThumbsUp />
-          </Nav.Link>
+          {id ? (
+            <>
+              <Nav.Link href="/home" className="text-white fs-4">
+                <FaHome />
+              </Nav.Link>
+              <Nav.Link href="/upload" className="text-white fs-4">
+                <FaUpload />
+              </Nav.Link>
+              <Nav.Link href="/history" className="text-white fs-4">
+                <FaHistory />
+              </Nav.Link>
+              <Nav.Link href="/watchlater" className="text-white fs-4">
+                <FaRegClock />
+              </Nav.Link>
+              <Nav.Link href="/yourvideos" className="text-white fs-4">
+                <FaPlay />
+              </Nav.Link>
+              <Nav.Link href="/likedvideos" className="text-white fs-4">
+                <FaThumbsUp />
+              </Nav.Link>
+            </>
+          ) : (
+            <Nav.Link href="/login" className="text-white fs-4">
+              <AiOutlineLogin />
+            </Nav.Link>
+          )}
         </Container>
       </Navbar>
     </>
