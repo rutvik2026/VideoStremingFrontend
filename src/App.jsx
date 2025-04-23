@@ -52,11 +52,11 @@ function App() {
           <Route
             path="/video"
             element={
-              <Protected>
+           
                 <div className="content">
                   <VideoPlayer />
                 </div>
-              </Protected>
+             
             }
           />
           <Route
