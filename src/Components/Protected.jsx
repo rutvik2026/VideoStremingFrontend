@@ -11,9 +11,9 @@ const Protected = ({ children }) => {
     if (!token) {
       // Allow access to "/register" without authentication
       if (
-        location.pathname !== "/register" &&
-        location.pathname !== "/login" &&
-        location.pathname !== "/video"
+        location.pathname !== "/#/register" &&
+        location.pathname !== "/#/login" &&
+        location.pathname !== "/#/video"
       ) {
         navigate("/", { replace: true });
       }
