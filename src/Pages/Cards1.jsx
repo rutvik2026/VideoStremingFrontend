@@ -9,7 +9,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
   const cust=sessionStorage.getItem("cust");
   const {id}=cust? JSON.parse(cust) : {};
  const base_url=import.meta.env.VITE_BASE_URL;
-  const navigate=useNavigate();
+  const navigate =useNavigate();
   const handleDiscription = () => {
     setIsDiscription(!isDiscription);
   };
