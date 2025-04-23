@@ -14,20 +14,26 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
   };
   const handleLike=async()=>{
     try {
-      const res = await axios.post(`${base_url}/api/user/v1/like`, {userId:id,videoId:Id});
+      if(id){
+        const res = await axios.post(`${base_url}/api/user/v1/like`, {userId:id,videoId:Id});
       console.log(res.data);
        if (!res.data.sucess) {
          alert("You are already Liked to this channel");
        } else {
          alert("You are liked to this video");
        }
+      }else{
+        alert("please log in to like this ");
+        navigate("/login");
+      }
     } catch (error) {
       console.log("error in handleLike",error);
     }
   };
   const handleWatchLater=async()=>{
       try {
-        const res = await axios.post("/api/user/v1/watchlater", {
+        if(id){
+          const res = await axios.post("/api/user/v1/watchlater", {
           userId: id,
           videoId:Id,
         });
@@ -37,6 +43,10 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
          } else {
            alert("You have add this video to watch Later");
          }
+        }else{
+          alert("please log in to add watchlater this ");
+          navigate("/login");
+        }
       } catch (error) {
         console.log("Error in handleWatchLeter",error);
       }
@@ -44,13 +54,18 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
   const handleSubscribe=async()=>{
     try {
 
-      const res=await axios.post("/api/user/v1/subscribe",{userId:id,channelId:channelId});
+     if(id){
+        const res=await axios.post("/api/user/v1/subscribe",{userId:id,channelId:channelId});
       console.log(res.data);
       if(!res.data.sucess){
         alert("You are already subscribed to this channel");
       }else{
         alert("You have subscribed to this channel");
       }
+     }else{
+       alert("please log in to subscribe this ");
+        navigate("/login");
+     }
     } catch (error) {
       console.log("Error in handleSubscribe",error);
     }
