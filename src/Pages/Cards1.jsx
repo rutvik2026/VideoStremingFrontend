@@ -46,7 +46,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
          }
         }else{
           alert("please log in to add watchlater this ");
-          navigate("/#/login");
+          navigate("/login");
         }
       } catch (error) {
         console.log("Error in handleWatchLeter",error);
@@ -65,7 +65,7 @@ function Cards({ Id,title, channelName, description, videoRef,likedCount ,channe
       }
      }else{
        alert("please log in to subscribe this ");
-        navigate("/#/login");
+        navigate("/login");
      }
     } catch (error) {
       console.log("Error in handleSubscribe",error);
