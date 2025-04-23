@@ -11,9 +11,10 @@ import {
   FaThumbsUp,
 } from "react-icons/fa"; // Icons for mobile navbar
 import { AiOutlineLogin } from "react-icons/ai";
+import { useAuth } from "./AuthController"; 
 const Navigation = () => {
-  const token=sessionStorage.getItem("cust");
-  const {id}=token? JSON.parse(token):{};
+  const {id}=useAuth();
+  
   return (
     <>
       {/* Sidebar for Desktop */}
